@@ -18,8 +18,10 @@
     "vue"
   ],
   "cSpell.words": [
-    "polidrev"
-],
+    "esnext",
+    "polidrev",
+    "scripthost"
+  ],
   "cSpell.showStatus": true,
 "path-autocomplete.extensionOnImport": true,
 "git.ignoreLimitWarning": true
