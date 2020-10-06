@@ -1,20 +1,33 @@
 import Vue from 'vue';
 import VueRouter, { RouteConfig } from 'vue-router';
-import Home from '../views/Home.vue';
+
+import HomePage from '../views/pages/HomePage.vue';
+import CabinetFurniturePage from '../views/pages/CabinetFurniturePage.vue';
+import SoftFurniturePage from '../views/pages/SoftFurniturePage.vue';
 
 Vue.use(VueRouter);
 
 const routes: RouteConfig[] = [
+  // EmptyLayout
+
+  // DefaultLayout
   {
-    path: '/',
-    name: 'Home',
-    component: Home,
+    path: '/CabinetFurniture',
+    name: 'CabinetFurniture',
+    component: CabinetFurniturePage,
+    meta: { layout: 'DefaultLayout' },
   },
   {
-    path: '/about',
-    name: 'About',
-
-    component: () => import('../views/About.vue'),
+    path: '/SoftFurniture',
+    name: 'SoftFurniture',
+    component: SoftFurniturePage,
+    meta: { layout: 'DefaultLayout' },
+  },
+  {
+    path: '/',
+    name: 'HomePage',
+    component: HomePage,
+    meta: { layout: 'DefaultLayout' },
   },
 ];
 
