@@ -1,0 +1,24 @@
+{
+  "workbench.tree.indent": 20,
+  "cSpell.language": "en, ru",
+  "editor.minimap.enabled": false,
+  "editor.formatOnSave": true,
+  "editor.wordWrap": "on",
+  "explorer.compactFolders": false,
+
+  "explorer.confirmDelete": true,
+  "explorer.confirmDragAndDrop": true,
+
+  "cSpell.enabledLanguageIds": [
+    "javascript",
+    "markdown",
+    "typescript",
+    "typescriptreact",
+    "yml",
+    "vue"
+  ],
+  "cSpell.words": ["esnext", "nowrap", "polidrev", "scripthost"],
+  "cSpell.showStatus": true,
+  "path-autocomplete.extensionOnImport": true,
+  "git.ignoreLimitWarning": true
+}

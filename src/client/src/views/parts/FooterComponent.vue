@@ -11,8 +11,13 @@ export default class FooterComponent extends Vue {
 
 <template>
   <v-footer app class="grey lighten-5">
-    Footer
+    +375(33) 675-54-75, +375(29) 652-71-51
   </v-footer>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.v-sheet.v-footer {
+  align-items: center;
+  justify-content: center;
+}
+</style>

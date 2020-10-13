@@ -1,55 +1,67 @@
 <script lang="ts">
 import Vue from 'vue';
+
 import { mapGetters, mapActions, mapMutations } from 'vuex';
+
+import {
+  GETTER__NAVIGATION_DRIVER,
+  MUTATION__NAVIGATION_DRIVER,
+} from '../../store/modules/navigationDrawer';
 
 export default Vue.extend({
   name: 'NavigationDrawerComponent',
 
-  props: ['value'],
+  data: () => ({
+    items: [
+      {
+        title: 'Home',
+        url: '/',
+        exact: true,
+        icon: 'mdi-home',
+      },
+      { title: 'Мягкая мебель', url: '/SoftFurniture', icon: 'mdi-sofa' },
+      {
+        title: 'Корпусная мебель',
+        url: '/CabinetFurniture',
+        icon: 'mdi-wardrobe-outline',
+      },
+      {
+        title: 'Где купить',
+        url: '/WhereToBuy',
+        icon: 'mdi-map',
+      },
+      { title: 'Оплата', url: '/Payment', icon: 'mdi-wallet-outline' },
+    ],
+  }),
 
   computed: {
-    ...mapGetters(['navigationDrawerGetter']),
+    ...mapGetters([GETTER__NAVIGATION_DRIVER]),
+
     drawer: {
       get() {
-        return this.navigationDrawerGetter;
+        return this.GETTER__NAVIGATION_DRIVER;
       },
+
       set(drawer: boolean) {
-        this.navigationDrawerMutation(drawer);
+        this.MUTATION__NAVIGATION_DRIVER(drawer);
       },
     },
   },
 
-  data: (): any => ({
-    items: [
-      {
-        title: 'Счет',
-        url: '/',
-        exact: true,
-        icon: 'mdi-credit-card-multiple',
-      },
-      { title: 'История', url: '/history', icon: 'mdi-table' },
-      {
-        title: 'Планирование',
-        url: '/planning',
-        icon: 'mdi-chart-line',
-      },
-      {
-        title: 'Новая запись',
-        url: '/record',
-        icon: 'mdi-table-column-plus-before',
-      },
-      { title: 'Категории', url: '/categories', icon: 'mdi-table-edit' },
-    ],
-  }),
-
   methods: {
-    ...mapMutations(['navigationDrawerMutation']),
+    ...mapMutations([MUTATION__NAVIGATION_DRIVER]),
   },
 });
 </script>
 
 <template>
-  <v-navigation-drawer app v-model="drawer" class="grey lighten-4" clipped>
+  <v-navigation-drawer
+    v-model="drawer"
+    app
+    clipped
+    right
+    class="grey lighten-4"
+  >
     <v-list>
       <v-list-item
         v-for="item in items"

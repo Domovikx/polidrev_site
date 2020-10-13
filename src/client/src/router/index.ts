@@ -4,6 +4,9 @@ import VueRouter, { RouteConfig } from 'vue-router';
 import HomePage from '../views/pages/HomePage.vue';
 import CabinetFurniturePage from '../views/pages/CabinetFurniturePage.vue';
 import SoftFurniturePage from '../views/pages/SoftFurniturePage.vue';
+import AdminTempPage from '../views/pages/AdminTempPage.vue';
+import PaymentPage from '../views/pages/PaymentPage.vue';
+import WhereToBuyPage from '../views/pages/WhereToBuyPage.vue';
 
 Vue.use(VueRouter);
 
@@ -12,9 +15,9 @@ const routes: RouteConfig[] = [
 
   // DefaultLayout
   {
-    path: '/CabinetFurniture',
-    name: 'CabinetFurniture',
-    component: CabinetFurniturePage,
+    path: '/',
+    name: 'HomePage',
+    component: HomePage,
     meta: { layout: 'DefaultLayout' },
   },
   {
@@ -24,9 +27,27 @@ const routes: RouteConfig[] = [
     meta: { layout: 'DefaultLayout' },
   },
   {
-    path: '/',
-    name: 'HomePage',
-    component: HomePage,
+    path: '/CabinetFurniture',
+    name: 'CabinetFurniture',
+    component: CabinetFurniturePage,
+    meta: { layout: 'DefaultLayout' },
+  },
+  {
+    path: '/AdminTemp',
+    name: 'AdminTemp',
+    component: AdminTempPage,
+    meta: { layout: 'DefaultLayout' },
+  },
+  {
+    path: '/Payment',
+    name: 'Payment',
+    component: PaymentPage,
+    meta: { layout: 'DefaultLayout' },
+  },
+  {
+    path: '/WhereToBuy',
+    name: 'WhereToBuy',
+    component: WhereToBuyPage,
     meta: { layout: 'DefaultLayout' },
   },
 ];
