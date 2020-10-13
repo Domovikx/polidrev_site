@@ -15,7 +15,9 @@ import NavigationDrawerComponent from '../parts/NavigationDrawerComponent.vue';
 })
 export default class DefaultLayout extends Vue {
   public name: 'DefaultLayout';
-  private data: () => {};
+  private data() {
+    return {};
+  }
 }
 </script>
 

@@ -5,7 +5,9 @@ import { Component, Prop } from 'vue-property-decorator';
 @Component
 export default class AdminTempPage extends Vue {
   public name: 'AdminTempPage';
-  private data: () => {};
+  private data() {
+    return {};
+  }
 }
 </script>
 

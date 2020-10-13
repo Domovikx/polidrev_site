@@ -4,7 +4,12 @@ import { Component, Vue } from 'vue-property-decorator';
 @Component({
   components: {},
 })
-export default class HomePage extends Vue {}
+export default class HomePage extends Vue {
+  public name: 'HomePage';
+  private data() {
+    return {};
+  }
+}
 </script>
 
 <template>

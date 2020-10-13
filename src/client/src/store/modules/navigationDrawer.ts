@@ -13,14 +13,12 @@ const navigationDrawer = {
       state: State,
       drawer: null | boolean,
     ): void => {
-      console.log('drawer :>> ', drawer);
       state.drawer = drawer;
     },
   },
 
   getters: {
     [GETTER__NAVIGATION_DRIVER]: (state: State): null | boolean => {
-      console.log('object :>> GETTER__NAVIGATION_DRIVER');
       return state.drawer;
     },
   },

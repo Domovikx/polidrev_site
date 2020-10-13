@@ -5,7 +5,9 @@ import { Component, Prop } from 'vue-property-decorator';
 @Component
 export default class PaymentPage extends Vue {
   public name: 'PaymentPage';
-  private data: () => {};
+  private data() {
+    return {};
+  }
 }
 </script>
 

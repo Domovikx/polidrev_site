@@ -5,7 +5,9 @@ import { Component, Prop } from 'vue-property-decorator';
 @Component
 export default class WhereToBuyPage extends Vue {
   public name: 'WhereToBuyPage';
-  private data: () => {};
+  private data() {
+    return {};
+  }
 }
 </script>
 

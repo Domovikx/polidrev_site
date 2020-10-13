@@ -5,7 +5,9 @@ import { Component, Prop } from 'vue-property-decorator';
 @Component
 export default class SoftFurniturePage extends Vue {
   public name: 'SoftFurniturePage';
-  private data: () => {};
+  private data() {
+    return {};
+  }
 }
 </script>
 

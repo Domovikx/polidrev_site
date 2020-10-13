@@ -5,7 +5,9 @@ import { Component, Prop } from 'vue-property-decorator';
 @Component
 export default class CabinetFurniturePage extends Vue {
   public name: 'CabinetFurniturePage';
-  private data: () => {};
+  private data() {
+    return {};
+  }
 }
 </script>
 

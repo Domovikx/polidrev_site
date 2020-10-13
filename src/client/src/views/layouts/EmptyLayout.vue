@@ -10,7 +10,9 @@ import FooterComponent from '../parts/FooterComponent.vue';
 })
 export default class EmptyLayout extends Vue {
   public name: 'EmptyLayout';
-  private data: () => {};
+  private data() {
+    return {};
+  }
 }
 </script>
 

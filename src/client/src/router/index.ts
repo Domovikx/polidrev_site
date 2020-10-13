@@ -4,9 +4,11 @@ import VueRouter, { RouteConfig } from 'vue-router';
 import HomePage from '../views/pages/HomePage.vue';
 import CabinetFurniturePage from '../views/pages/CabinetFurniturePage.vue';
 import SoftFurniturePage from '../views/pages/SoftFurniturePage.vue';
-import AdminTempPage from '../views/pages/AdminTempPage.vue';
 import PaymentPage from '../views/pages/PaymentPage.vue';
 import WhereToBuyPage from '../views/pages/WhereToBuyPage.vue';
+
+// TODO: temp page
+import AdminTempPage from '../views/pages/AdminTempPage.vue';
 
 Vue.use(VueRouter);
 

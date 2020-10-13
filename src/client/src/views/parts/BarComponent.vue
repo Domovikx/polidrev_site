@@ -16,7 +16,9 @@ import {
 })
 export default class BarComponent extends Vue {
   public name: 'BarComponent';
-  private data: () => {};
+  private data() {
+    return {};
+  }
 
   private GETTER__NAVIGATION_DRIVER: boolean | null;
   private MUTATION__NAVIGATION_DRIVER: any;
@@ -36,7 +38,6 @@ export default class BarComponent extends Vue {
 <template>
   <v-app-bar app clipped-right class="grey lighten-5">
     <v-bottom-navigation style="height: 100%">
-      <!-- <v-app-bar-nav-icon @click="onClickBurger"></v-app-bar-nav-icon> -->
       <v-img
         class="v-img ml-4"
         @click="goto('/')"

@@ -30,4 +30,8 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### Examples and notes
 
-https://codepen.io/JamieCurnow/pen/GYxgYj - навигационная панель пример
+- навигационная панель пример:
+  https://codepen.io/JamieCurnow/pen/GYxgYj
+
+- vue typescript component:  
+  https://www.digitalocean.com/community/tutorials/vuejs-typescript-class-components

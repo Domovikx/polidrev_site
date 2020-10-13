@@ -1,5 +1,6 @@
 <script lang="ts">
 import Vue from 'vue';
+import { Component, Prop } from 'vue-property-decorator';
 
 import { mapGetters, mapActions, mapMutations } from 'vuex';
 
@@ -8,50 +9,50 @@ import {
   MUTATION__NAVIGATION_DRIVER,
 } from '../../store/modules/navigationDrawer';
 
-export default Vue.extend({
-  name: 'NavigationDrawerComponent',
+@Component({
+  components: {},
+  computed: mapGetters([GETTER__NAVIGATION_DRIVER]),
+  methods: mapMutations([MUTATION__NAVIGATION_DRIVER]),
+})
+export default class NavigationDrawerComponent extends Vue {
+  public name: 'NavigationDrawerComponent';
 
-  data: () => ({
-    items: [
-      {
-        title: 'Home',
-        url: '/',
-        exact: true,
-        icon: 'mdi-home',
-      },
-      { title: 'Мягкая мебель', url: '/SoftFurniture', icon: 'mdi-sofa' },
-      {
-        title: 'Корпусная мебель',
-        url: '/CabinetFurniture',
-        icon: 'mdi-wardrobe-outline',
-      },
-      {
-        title: 'Где купить',
-        url: '/WhereToBuy',
-        icon: 'mdi-map',
-      },
-      { title: 'Оплата', url: '/Payment', icon: 'mdi-wallet-outline' },
-    ],
-  }),
+  private GETTER__NAVIGATION_DRIVER: boolean;
+  private MUTATION__NAVIGATION_DRIVER: any;
 
-  computed: {
-    ...mapGetters([GETTER__NAVIGATION_DRIVER]),
+  private data() {
+    return {
+      items: [
+        {
+          title: 'Home',
+          url: '/',
+          exact: true,
+          icon: 'mdi-home',
+        },
+        { title: 'Мягкая мебель', url: '/SoftFurniture', icon: 'mdi-sofa' },
+        {
+          title: 'Корпусная мебель',
+          url: '/CabinetFurniture',
+          icon: 'mdi-wardrobe-outline',
+        },
+        {
+          title: 'Где купить',
+          url: '/WhereToBuy',
+          icon: 'mdi-map',
+        },
+        { title: 'Оплата', url: '/Payment', icon: 'mdi-wallet-outline' },
+      ],
+    };
+  }
 
-    drawer: {
-      get() {
-        return this.GETTER__NAVIGATION_DRIVER;
-      },
-
-      set(drawer: boolean) {
-        this.MUTATION__NAVIGATION_DRIVER(drawer);
-      },
-    },
-  },
-
-  methods: {
-    ...mapMutations([MUTATION__NAVIGATION_DRIVER]),
-  },
-});
+  // computed:
+  private get drawer() {
+    return this.GETTER__NAVIGATION_DRIVER;
+  }
+  private set drawer(drawer: boolean) {
+    this.MUTATION__NAVIGATION_DRIVER(drawer);
+  }
+}
 </script>
 
 <template>
