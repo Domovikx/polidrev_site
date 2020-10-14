@@ -5,9 +5,6 @@ import { Component, Prop } from 'vue-property-decorator';
 @Component
 export default class FooterComponent extends Vue {
   public name: 'FooterComponent';
-  private data() {
-    return {};
-  }
 }
 </script>
 

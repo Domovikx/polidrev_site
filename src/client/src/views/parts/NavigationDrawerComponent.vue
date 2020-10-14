@@ -8,17 +8,22 @@ import {
   GETTER__NAVIGATION_DRIVER,
   MUTATION__NAVIGATION_DRIVER,
 } from '../../store/modules/navigationDrawer';
+import { GETTER__WINDOW_STORE__GET_BREAKPOINT } from '../../store/modules/windowStore';
 
 @Component({
   components: {},
-  computed: mapGetters([GETTER__NAVIGATION_DRIVER]),
   methods: mapMutations([MUTATION__NAVIGATION_DRIVER]),
+  computed: mapGetters([
+    GETTER__NAVIGATION_DRIVER,
+    GETTER__WINDOW_STORE__GET_BREAKPOINT,
+  ]),
 })
 export default class NavigationDrawerComponent extends Vue {
   public name: 'NavigationDrawerComponent';
 
-  private GETTER__NAVIGATION_DRIVER: boolean;
   private MUTATION__NAVIGATION_DRIVER: any;
+  private GETTER__NAVIGATION_DRIVER: boolean;
+  private GETTER__WINDOW_STORE__GET_BREAKPOINT: string;
 
   private data() {
     return {
@@ -47,16 +52,32 @@ export default class NavigationDrawerComponent extends Vue {
 
   // computed:
   private get drawer() {
-    return this.GETTER__NAVIGATION_DRIVER;
+    const drawer: boolean = this[GETTER__NAVIGATION_DRIVER];
+    const breakpoint: string = this[GETTER__WINDOW_STORE__GET_BREAKPOINT];
+    switch (breakpoint) {
+      case 'xs':
+        return drawer;
+      case 'sm':
+        return drawer;
+      case 'md':
+        return false;
+      case 'lg':
+        return false;
+      case 'xl':
+        return false;
+      default:
+        return false;
+    }
   }
   private set drawer(drawer: boolean) {
-    this.MUTATION__NAVIGATION_DRIVER(drawer);
+    this[MUTATION__NAVIGATION_DRIVER](drawer);
   }
 }
 </script>
 
 <template>
   <v-navigation-drawer
+    disable-resize-watcher
     v-model="drawer"
     app
     clipped

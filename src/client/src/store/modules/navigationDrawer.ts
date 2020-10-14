@@ -1,30 +1,28 @@
 export const MUTATION__NAVIGATION_DRIVER = 'MUTATION__NAVIGATION_DRIVER';
 export const GETTER__NAVIGATION_DRIVER = 'GETTER__NAVIGATION_DRIVER';
 
-const navigationDrawer = {
+export const navigationDrawer = {
   state: {
     drawer: null,
-  },
+  } as State,
 
   actions: {},
 
   mutations: {
     [MUTATION__NAVIGATION_DRIVER]: (
       state: State,
-      drawer: null | boolean,
+      drawer: boolean | null,
     ): void => {
       state.drawer = drawer;
     },
   },
 
   getters: {
-    [GETTER__NAVIGATION_DRIVER]: (state: State): null | boolean => {
+    [GETTER__NAVIGATION_DRIVER]: (state: State): boolean | null => {
       return state.drawer;
     },
   },
 };
-
-export { navigationDrawer };
 
 // ************* interfaces *************
 interface State {
