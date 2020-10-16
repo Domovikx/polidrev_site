@@ -41,6 +41,7 @@ export default class App extends Vue {
 
   // Lifecycle hook
   private created() {
+    document.title = 'Polidrev - мебельная фабрика. Мягкая и корпусная мебель.';
     this.init();
   }
   private destroyed() {
@@ -49,6 +50,8 @@ export default class App extends Vue {
 
   // Methods
   private init() {
+    // document.title = 'Polidrev - мебельная фабрика. Мягкая и корпусная мебель.';
+
     window.addEventListener('resize', this.resizeHandler);
 
     const userAgent: string = window.navigator.userAgent;
