@@ -64,7 +64,7 @@ export default class BarComponent extends Vue {
 </script>
 
 <template>
-  <v-app-bar app clipped-right class="grey lighten-5">
+  <v-app-bar app clipped-right dark class="v-app-bar" color="teal darken-4">
     <v-img
       class="v-img ml-4"
       @click="goto('/')"
@@ -72,7 +72,11 @@ export default class BarComponent extends Vue {
       src="../../assets/logo-polidrev.webp"
     ></v-img>
 
-    <v-bottom-navigation style="height: 100%" v-if="isShowNavigation">
+    <v-bottom-navigation
+      class="v-bottom-navigation"
+      style="height: 100%"
+      v-if="isShowNavigation"
+    >
       <v-spacer></v-spacer>
 
       <v-btn text to="/SoftFurniture">
@@ -92,7 +96,11 @@ export default class BarComponent extends Vue {
       </v-btn>
     </v-bottom-navigation>
 
-    <v-bottom-navigation style="height: 100%" v-else>
+    <v-bottom-navigation
+      class="v-bottom-navigation"
+      style="height: 100%"
+      v-else
+    >
       <v-spacer></v-spacer>
       <v-app-bar-nav-icon @click="onClickBurger"></v-app-bar-nav-icon>
     </v-bottom-navigation>
@@ -100,6 +108,12 @@ export default class BarComponent extends Vue {
 </template>
 
 <style lang="scss" scoped>
+.v-app-bar {
+  display: grid;
+  grid-template-columns: minmax(0, 1264px);
+  justify-content: center;
+}
+
 .v-item-group.v-bottom-navigation {
   background: none;
   box-shadow: none;

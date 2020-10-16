@@ -17,7 +17,13 @@
     "yml",
     "vue"
   ],
-  "cSpell.words": ["esnext", "nowrap", "polidrev", "scripthost"],
+  "cSpell.words": [
+    "esnext",
+    "minmax",
+    "nowrap",
+    "polidrev",
+    "scripthost"
+  ],
   "cSpell.showStatus": true,
   "path-autocomplete.extensionOnImport": true,
   "git.ignoreLimitWarning": true

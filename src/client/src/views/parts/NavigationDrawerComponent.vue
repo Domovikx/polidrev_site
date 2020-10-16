@@ -82,7 +82,7 @@ export default class NavigationDrawerComponent extends Vue {
     app
     clipped
     right
-    class="grey lighten-4"
+    class="grey lighten-4 v-navigation-drawer"
   >
     <v-list>
       <v-list-item

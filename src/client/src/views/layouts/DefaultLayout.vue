@@ -29,8 +29,7 @@ export default class DefaultLayout extends Vue {
 
     <v-main class="v-main grey lighten-4">
       <v-card-text>
-        DefaultLayout
-        <router-view></router-view>
+        <router-view class="router-view"></router-view>
       </v-card-text>
     </v-main>
 
@@ -42,5 +41,8 @@ export default class DefaultLayout extends Vue {
 .v-toolbar__content,
 .v-toolbar__extension {
   padding: 0;
+}
+.router-view {
+  max-width: 1264px;
 }
 </style>

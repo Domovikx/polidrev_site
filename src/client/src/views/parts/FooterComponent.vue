@@ -9,8 +9,13 @@ export default class FooterComponent extends Vue {
 </script>
 
 <template>
-  <v-footer app class="grey lighten-5">
-    +375(33) 675-54-75, +375(29) 652-71-51
+  <v-footer app absolute dark class="v-footer" color="teal darken-4">
+    <v-btn text href="tel:+375(33)-675-54-75">
+      <v-icon>mdi-cellphone-android</v-icon> +375(33)675-54-75
+    </v-btn>
+    <v-btn text href="tel:+375(29)-652-71-51">
+      <v-icon>mdi-cellphone-android</v-icon> +375(29)652-71-51
+    </v-btn>
   </v-footer>
 </template>
 
