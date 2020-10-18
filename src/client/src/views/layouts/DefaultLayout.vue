@@ -1,6 +1,5 @@
 <script lang="ts">
-import Vue from 'vue';
-import { Component, Prop } from 'vue-property-decorator';
+import { Vue, Component, Prop } from 'vue-property-decorator';
 
 import BarComponent from '../parts/BarComponent.vue';
 import FooterComponent from '../parts/FooterComponent.vue';

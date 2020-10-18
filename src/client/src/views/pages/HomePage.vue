@@ -1,5 +1,5 @@
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
+import { Vue, Component } from 'vue-property-decorator';
 
 @Component({
   components: {},
@@ -49,5 +49,11 @@ export default class HomePage extends Vue {
     recusandae doloribus ullam assumenda ea architecto inventore eius laudantium
     blanditiis saepe sapiente laborum nemo reiciendis quaerat perspiciatis?
     Voluptates!
+
+    <v-img
+      lazy-src="../../assets/img-001/wood-low.jpg"
+      src="../../assets/img-001/wood.webp"
+      max-height="440"
+    ></v-img>
   </v-container>
 </template>

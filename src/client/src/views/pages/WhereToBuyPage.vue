@@ -1,6 +1,5 @@
 <script lang="ts">
-import Vue from 'vue';
-import { Component, Prop } from 'vue-property-decorator';
+import { Vue, Component, Prop } from 'vue-property-decorator';
 
 @Component
 export default class WhereToBuyPage extends Vue {
@@ -17,4 +16,8 @@ export default class WhereToBuyPage extends Vue {
   </v-container>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.v-img {
+  border-radius: 4px;
+}
+</style>

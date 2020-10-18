@@ -1,6 +1,5 @@
 <script lang="ts">
-import Vue from 'vue';
-import { Component, Prop } from 'vue-property-decorator';
+import { Vue, Component, Prop } from 'vue-property-decorator';
 
 @Component
 export default class SoftFurniturePage extends Vue {
@@ -14,7 +13,17 @@ export default class SoftFurniturePage extends Vue {
 <template>
   <v-container>
     SoftFurniturePage
+
+    <v-img
+      class="v-img"
+      src="../../assets/img-001/aboutgeothermal_geofinancialcase.webp"
+      max-height="440"
+    ></v-img>
   </v-container>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.v-img {
+  border-radius: 4px;
+}
+</style>

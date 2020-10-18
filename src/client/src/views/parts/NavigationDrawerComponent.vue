@@ -1,6 +1,5 @@
 <script lang="ts">
-import Vue from 'vue';
-import { Component, Prop } from 'vue-property-decorator';
+import { Vue, Component, Prop } from 'vue-property-decorator';
 
 import { mapGetters, mapActions, mapMutations } from 'vuex';
 
@@ -103,5 +102,3 @@ export default class NavigationDrawerComponent extends Vue {
     </v-list>
   </v-navigation-drawer>
 </template>
-
-<style lang="scss" scoped></style>

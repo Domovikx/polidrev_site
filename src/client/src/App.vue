@@ -1,5 +1,5 @@
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator';
+import { Vue, Component } from 'vue-property-decorator';
 
 import { mapGetters, mapActions, mapMutations } from 'vuex';
 
@@ -50,8 +50,6 @@ export default class App extends Vue {
 
   // Methods
   private init() {
-    // document.title = 'Polidrev - мебельная фабрика. Мягкая и корпусная мебель.';
-
     window.addEventListener('resize', this.resizeHandler);
 
     const userAgent: string = window.navigator.userAgent;
@@ -75,3 +73,5 @@ export default class App extends Vue {
     </component>
   </v-app>
 </template>
+
+<style lang="scss" scoped></style>

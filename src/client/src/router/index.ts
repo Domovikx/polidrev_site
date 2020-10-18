@@ -4,9 +4,11 @@ import VueRouter, { RouteConfig } from 'vue-router';
 import HomePage from '../views/pages/HomePage.vue';
 import CabinetFurniturePage from '../views/pages/CabinetFurniturePage.vue';
 import SoftFurniturePage from '../views/pages/SoftFurniturePage.vue';
-import PaymentPage from '../views/pages/PaymentPage.vue';
+import PaymentPage from '../views/pages/PaymentPage/PaymentPage.vue';
 import WhereToBuyPage from '../views/pages/WhereToBuyPage.vue';
 
+// api
+import AllIconsPage from '../icons/AllIconsPage.vue';
 // TODO: temp page
 import AdminTempPage from '../views/pages/AdminTempPage.vue';
 
@@ -17,6 +19,15 @@ const DEFAULT_TITLE =
 
 const routes: RouteConfig[] = [
   // EmptyLayout
+  {
+    path: '/api/AllIconsPage',
+    name: 'AllIconsPage',
+    component: AllIconsPage,
+    meta: {
+      layout: 'EmptyLayout',
+      title: 'api-AllIconsPage',
+    },
+  },
 
   // DefaultLayout
   {

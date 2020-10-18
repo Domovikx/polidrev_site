@@ -22,7 +22,8 @@
     "minmax",
     "nowrap",
     "polidrev",
-    "scripthost"
+    "scripthost",
+    "webp"
   ],
   "cSpell.showStatus": true,
   "path-autocomplete.extensionOnImport": true,
