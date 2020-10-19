@@ -1,14 +1,9 @@
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator';
 
-@Component({
-  components: {},
-})
+@Component
 export default class HomePage extends Vue {
   public name: 'HomePage';
-  private data() {
-    return {};
-  }
 }
 </script>
 
@@ -50,10 +45,6 @@ export default class HomePage extends Vue {
     blanditiis saepe sapiente laborum nemo reiciendis quaerat perspiciatis?
     Voluptates!
 
-    <v-img
-      lazy-src="../../assets/img-001/wood-low.jpg"
-      src="../../assets/img-001/wood.webp"
-      max-height="440"
-    ></v-img>
+    <v-img src="../../assets/img-001/wood.webp" max-height="440"></v-img>
   </v-container>
 </template>

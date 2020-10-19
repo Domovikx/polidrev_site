@@ -1,17 +1,12 @@
 <script lang="ts">
-import { Vue, Component, Prop } from 'vue-property-decorator';
+import { Vue, Component } from 'vue-property-decorator';
 
 import BarComponent from '../parts/BarComponent.vue';
 import FooterComponent from '../parts/FooterComponent.vue';
 
-@Component({
-  components: {},
-})
+@Component
 export default class EmptyLayout extends Vue {
   public name: 'EmptyLayout';
-  private data() {
-    return {};
-  }
 }
 </script>
 

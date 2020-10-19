@@ -15,7 +15,6 @@ import {
 
 @Component({
   components: { DefaultLayout, EmptyLayout, BarComponent },
-  computed: mapGetters([]),
   methods: {
     ...mapActions([
       ACTION__WINDOW_STORE__CHECK_IS_MOBILE,
@@ -29,10 +28,6 @@ export default class App extends Vue {
 
   private ACTION__WINDOW_STORE__CHECK_IS_MOBILE: any;
   private ACTION__WINDOW_STORE__CHECK_BREAKPOINT: any;
-
-  private data() {
-    return {};
-  }
 
   // computed
   private get layout(): string {

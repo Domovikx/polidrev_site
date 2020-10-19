@@ -1,5 +1,5 @@
 <script lang="ts">
-import { Vue, Component, Prop, Watch } from 'vue-property-decorator';
+import { Vue, Component } from 'vue-property-decorator';
 
 import { mapGetters, mapActions, mapMutations } from 'vuex';
 
@@ -10,7 +10,6 @@ import {
 import { GETTER__WINDOW_STORE__GET_BREAKPOINT } from '../../store/modules/windowStore';
 
 @Component({
-  components: {},
   methods: mapMutations([MUTATION__NAVIGATION_DRIVER]),
   computed: mapGetters([
     GETTER__NAVIGATION_DRIVER,
@@ -26,10 +25,6 @@ export default class BarComponent extends Vue {
 
   private showNavigation: boolean = false;
   private clientWidth: number = document.documentElement.clientWidth;
-
-  private data() {
-    return {};
-  }
 
   private goto(path: string): void {
     if (this.$route.path !== path) {

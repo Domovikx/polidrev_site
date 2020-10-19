@@ -1,5 +1,5 @@
 <script lang="ts">
-import { Vue, Component, Prop } from 'vue-property-decorator';
+import { Vue, Component } from 'vue-property-decorator';
 
 import PaymentMethods from './PaymentMethods.vue';
 import PaymentInstallment from './PaymentInstallment.vue';
@@ -9,9 +9,6 @@ import PaymentInstallment from './PaymentInstallment.vue';
 })
 export default class PaymentPage extends Vue {
   public name: 'PaymentPage';
-  private data() {
-    return {};
-  }
 }
 </script>
 
