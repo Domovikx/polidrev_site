@@ -1,7 +1,11 @@
 <script lang="ts">
 import { Vue, Component, Prop } from 'vue-property-decorator';
 
-@Component
+import YandexMap from './YandexMap.vue';
+
+@Component({
+  components: { YandexMap },
+})
 export default class WhereToBuyPage extends Vue {
   public name: 'WhereToBuyPage';
   private data() {
@@ -13,6 +17,8 @@ export default class WhereToBuyPage extends Vue {
 <template>
   <v-container>
     WhereToBuyPage
+
+    <YandexMap></YandexMap>
   </v-container>
 </template>
 

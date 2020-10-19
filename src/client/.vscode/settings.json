@@ -23,7 +23,9 @@
     "nowrap",
     "polidrev",
     "scripthost",
-    "webp"
+    "webp",
+    "ymap",
+    "ymaps"
   ],
   "cSpell.showStatus": true,
   "path-autocomplete.extensionOnImport": true,

@@ -42,3 +42,39 @@ vue typescript component:
 materialdesignicons:
 
 - https://cdn.materialdesignicons.com/5.4.55/
+
+Vue-yandex-maps:
+
+- https://vue-yandex-maps.github.io/guide/ - не понравилась, нет поддержки TS
+
+! Для подключения яндекс карты во VUE
+
+```html
+<!-- index.html > yandex-map > подключаем библиотеку
+  поменять apikey -->
+<script src="https://api-maps.yandex.ru/2.1?apikey=0&load=package.full&lang=ru_RU"></script>
+```
+
+в нужном компоненте добавляем логики и место для рендоринга
+
+```ts
+  // Lifecycle hook
+private created() {
+  // @ts-ignore
+  ymaps.ready(function() {
+    // @ts-ignore
+    const myMap = new ymaps.Map('YMapsID', {
+      center: [55.76, 37.64],
+      zoom: 10,
+    });
+  });
+}
+```
+
+и энтри поинт карты
+
+```html
+<div id="YMapsID" style="min-width: 200px; min-height: 400px;"></div>
+```
+
+- https://yandex.ru/dev/maps/jsbox/2.1/mapbasics - документация по добавлению карты yandex

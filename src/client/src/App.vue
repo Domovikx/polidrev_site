@@ -41,7 +41,6 @@ export default class App extends Vue {
 
   // Lifecycle hook
   private created() {
-    document.title = 'Polidrev - мебельная фабрика. Мягкая и корпусная мебель.';
     this.init();
   }
   private destroyed() {
