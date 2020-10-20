@@ -3,7 +3,7 @@ import VueRouter, { RouteConfig } from 'vue-router';
 
 import HomePage from '../views/pages/HomePage.vue';
 import CabinetFurniturePage from '../views/pages/CabinetFurniturePage.vue';
-import SoftFurniturePage from '../views/pages/SoftFurniturePage.vue';
+import SoftFurniturePage from '../views/pages/SoftFurniturePage/SoftFurniturePage.vue';
 import PaymentPage from '../views/pages/PaymentPage/PaymentPage.vue';
 import WhereToBuyPage from '../views/pages/WhereToBuyPage/WhereToBuyPage.vue';
 
