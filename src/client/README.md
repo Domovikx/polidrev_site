@@ -78,3 +78,7 @@ private created() {
 ```
 
 - https://yandex.ru/dev/maps/jsbox/2.1/mapbasics - документация по добавлению карты yandex
+
+## firebase
+
+https://console.firebase.google.com/project/polidrev-site/overview
