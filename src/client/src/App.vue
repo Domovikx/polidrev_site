@@ -68,4 +68,14 @@ export default class App extends Vue {
   </v-app>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss">
+.header-1 {
+  font-size: 1.5rem;
+  padding: 20px 0;
+  line-height: 1.25;
+}
+a:focus,
+a:hover {
+  text-decoration: none;
+}
+</style>

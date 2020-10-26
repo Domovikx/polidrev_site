@@ -56,7 +56,7 @@ export default class PaymentMethods extends Vue {
         >
         </v-img>
 
-        <div>Интернет-банк</div>
+        <span>Интернет-банк</span>
       </li>
     </ul>
   </section>
@@ -112,6 +112,11 @@ li {
   place-content: center;
   justify-items: center;
   border-radius: 16px;
+  padding: 10px;
+
+  // span {
+  //   white-space: nowrap;
+  // }
 }
 
 .payment-methods-img {

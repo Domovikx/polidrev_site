@@ -92,4 +92,8 @@ https://console.firebase.google.com/project/polidrev-site/overview
   ? File dist/404.html already exists. Overwrite? Yes  
   ? File dist/index.html already exists. Overwrite? No
 
+### firebase deploy
+
+- npm run build
 - firebase deploy
+- Hosting URL: https://polidrev-site.web.app
