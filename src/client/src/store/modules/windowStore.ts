@@ -1,4 +1,5 @@
-import { Commit, Dispatch } from 'vuex';
+import { ActionContext } from '@/interfaces/ActionContext.interface';
+
 import { isMobileChecker } from '../../utils/isMobileChecker';
 import { viewportBreakpoints } from '../../utils/viewportBreakpoints';
 
@@ -63,17 +64,7 @@ export const windowStore = {
   },
 };
 
-// ************* interfaces *************
 interface State {
   isMobile: boolean;
   breakpoint: string;
-}
-
-interface ActionContext {
-  dispatch?: Dispatch | any;
-  commit?: Commit | any;
-  state?: any;
-  getters?: any;
-  rootState?: any;
-  rootGetters?: any;
 }

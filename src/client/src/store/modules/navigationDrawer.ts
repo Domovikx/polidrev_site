@@ -24,7 +24,6 @@ export const navigationDrawer = {
   },
 };
 
-// ************* interfaces *************
 interface State {
   drawer: null | boolean;
 }

@@ -1,5 +1,6 @@
 <script lang="ts">
 import {
+  ActionShowObject,
   ACTION__SNACKBAR__SHOW,
   GETTER__SNACKBAR__SHOW,
 } from '@/store/modules/snackbar';
@@ -25,7 +26,7 @@ export default class Snackbar extends Vue {
     return {
       multiLine: true,
       text: `Snackbar text`,
-      timeout: -1,
+      timeout: 10000,
     };
   }
 
@@ -37,7 +38,10 @@ export default class Snackbar extends Vue {
     return this[GETTER__SNACKBAR__SHOW].message;
   }
   private set snackbarShow(isShow) {
-    this[ACTION__SNACKBAR__SHOW]({ isShow: false, message: '' });
+    this[ACTION__SNACKBAR__SHOW]({
+      isShow: false,
+      message: '',
+    } as ActionShowObject);
   }
 }
 </script>

@@ -2,16 +2,28 @@
 import { Vue, Component } from 'vue-property-decorator';
 import { emailRules, passwordRules } from '../../../utils/validationRules';
 
-@Component
+import { mapGetters, mapActions, mapMutations } from 'vuex';
+import { ACTION__AUTH__LOGIN, RegisterData } from '@/store/modules/auth';
+import { ACTION__SNACKBAR__SHOW } from '@/store/modules/snackbar';
+
+@Component({
+  methods: {
+    ...mapActions([ACTION__AUTH__LOGIN, ACTION__SNACKBAR__SHOW]),
+    ...mapMutations([]),
+  },
+  computed: mapGetters([]),
+})
 export default class LoginPage extends Vue {
   public name: 'LoginPage';
 
-  public email: boolean;
+  public email: string;
   public userRole: string;
   public password: string;
   public passwordShow: boolean;
   public valid: boolean;
   public lazy: boolean;
+
+  private ACTION__AUTH__LOGIN;
 
   private data() {
     return {
@@ -32,8 +44,30 @@ export default class LoginPage extends Vue {
     this.passwordShow = !this.passwordShow;
   }
 
+  // TODO : to utils
   private goToPath(path): void {
     this.$router.push(path);
+  }
+
+  private async onLogin(): Promise<void> {
+    try {
+      const registerData: RegisterData = {
+        email: this.email,
+        password: this.password,
+      };
+      const isAccess = await this[ACTION__AUTH__LOGIN](registerData);
+      if (isAccess) {
+        this.goToPath('/Admin');
+      } else {
+        this[ACTION__SNACKBAR__SHOW]({
+          isShow: true,
+          message: `Права администратора еще не активированы. Или ошибка на стороне сервера.`,
+        });
+        return;
+      }
+    } catch (error) {
+      throw error;
+    }
   }
 }
 </script>
@@ -85,7 +119,12 @@ export default class LoginPage extends Vue {
           </v-card-text>
 
           <v-card-actions class="btn-wrapper">
-            <v-btn block class="primary white--text" :disabled="!valid">
+            <v-btn
+              block
+              class="primary white--text"
+              :disabled="!valid"
+              @click="onLogin"
+            >
               Вход
             </v-btn>
           </v-card-actions>

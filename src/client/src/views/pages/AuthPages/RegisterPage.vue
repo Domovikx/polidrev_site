@@ -3,7 +3,7 @@ import { Vue, Component } from 'vue-property-decorator';
 import { emailRules, passwordRules } from '../../../utils/validationRules';
 
 import { mapGetters, mapActions, mapMutations } from 'vuex';
-import { ACTION__AUTH__REGISTER } from '@/store/modules/auth';
+import { ACTION__AUTH__REGISTER, RegisterData } from '@/store/modules/auth';
 
 @Component({
   methods: {
@@ -15,8 +15,8 @@ import { ACTION__AUTH__REGISTER } from '@/store/modules/auth';
 export default class RegisterPage extends Vue {
   public name: 'RegisterPage';
 
-  public email: boolean;
-  public userRole: string;
+  public email: string;
+  public isAdmin: boolean;
   public password: string;
   public passwordShow: boolean;
   public valid: boolean;
@@ -27,7 +27,7 @@ export default class RegisterPage extends Vue {
   private data() {
     return {
       email: '',
-      userRole: '',
+      isAdmin: false,
       password: '',
       passwordShow: false,
       valid: true,
@@ -49,13 +49,13 @@ export default class RegisterPage extends Vue {
 
   async onRegister() {
     try {
-      const registerFormData = {
+      const registerData: RegisterData = {
         email: this.email,
         password: this.password,
-        name: this.userRole,
+        isAdmin: this.isAdmin,
       };
-      await this[ACTION__AUTH__REGISTER](registerFormData);
-      this.goToPath('/Admin');
+      await this[ACTION__AUTH__REGISTER](registerData);
+      this.goToPath('/auth/login');
     } catch (error) {
       throw error;
     }

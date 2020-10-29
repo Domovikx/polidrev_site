@@ -31,7 +31,10 @@ export const snackbar = {
 
   getters: {
     [GETTER__SNACKBAR__SHOW]: (state: State) => {
-      return { isShow: state.isShow, message: state.message };
+      return {
+        isShow: state.isShow,
+        message: state.message,
+      } as ActionShowObject;
     },
   },
 };
@@ -40,7 +43,7 @@ interface State {
   isShow: boolean;
   message: string;
 }
-interface ActionShowObject {
+export interface ActionShowObject {
   isShow: boolean;
   message: string;
 }
