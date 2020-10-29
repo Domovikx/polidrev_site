@@ -2,14 +2,14 @@
 import { Vue, Component } from 'vue-property-decorator';
 
 @Component
-export default class AdminTempPage extends Vue {
-  public name: 'AdminTempPage';
+export default class LoginPage extends Vue {
+  public name: 'LoginPage';
 }
 </script>
 
 <template>
   <v-container>
-    AdminTempPage
+    LoginPage
   </v-container>
 </template>
 

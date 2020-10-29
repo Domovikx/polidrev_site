@@ -7,10 +7,12 @@ import SoftFurniturePage from '../views/pages/SoftFurniturePage/SoftFurniturePag
 import PaymentPage from '../views/pages/PaymentPage/PaymentPage.vue';
 import WhereToBuyPage from '../views/pages/WhereToBuyPage/WhereToBuyPage.vue';
 
-// api
+import AdminPage from '../views/pages/AdminPage/AdminPage.vue';
+import LoginPage from '../views/pages/AuthPages/LoginPage.vue';
+import RegisterPage from '../views/pages/AuthPages/RegisterPage.vue';
+
+// api for developing
 import AllIconsPage from '../icons/AllIconsPage.vue';
-// TODO: temp page
-import AdminTempPage from '../views/pages/AdminTempPage.vue';
 
 Vue.use(VueRouter);
 
@@ -26,6 +28,34 @@ const routes: RouteConfig[] = [
     meta: {
       layout: 'EmptyLayout',
       title: 'api-AllIconsPage',
+    },
+  },
+
+  {
+    path: '/auth/register',
+    name: 'RegisterPage',
+    component: RegisterPage,
+    meta: {
+      layout: 'EmptyLayout',
+      title: 'Admin',
+    },
+  },
+  {
+    path: '/auth/login',
+    name: 'LoginPage',
+    component: LoginPage,
+    meta: {
+      layout: 'EmptyLayout',
+      title: 'Admin',
+    },
+  },
+  {
+    path: '/Admin',
+    name: 'AdminPage',
+    component: AdminPage,
+    meta: {
+      layout: 'EmptyLayout',
+      title: 'Admin',
     },
   },
 
@@ -50,12 +80,6 @@ const routes: RouteConfig[] = [
     name: 'CabinetFurniture',
     component: CabinetFurniturePage,
     meta: { layout: 'DefaultLayout', title: 'Polidrev - корпусная мебель' },
-  },
-  {
-    path: '/AdminTemp',
-    name: 'AdminTemp',
-    component: AdminTempPage,
-    meta: { layout: 'DefaultLayout' },
   },
   {
     path: '/Payment',
