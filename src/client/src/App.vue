@@ -5,8 +5,8 @@ import { mapGetters, mapActions, mapMutations } from 'vuex';
 
 import DefaultLayout from './views/layouts/DefaultLayout.vue';
 import EmptyLayout from './views/layouts/EmptyLayout.vue';
-
 import BarComponent from './views/parts/BarComponent.vue';
+import Snackbar from './views/common/Snackbar.vue';
 
 import {
   ACTION__WINDOW_STORE__CHECK_BREAKPOINT,
@@ -14,7 +14,7 @@ import {
 } from './store/modules/windowStore';
 
 @Component({
-  components: { DefaultLayout, EmptyLayout, BarComponent },
+  components: { DefaultLayout, EmptyLayout, BarComponent, Snackbar },
   methods: {
     ...mapActions([
       ACTION__WINDOW_STORE__CHECK_IS_MOBILE,
@@ -65,6 +65,7 @@ export default class App extends Vue {
     <component :is="layout">
       <router-view />
     </component>
+    <Snackbar></Snackbar>
   </v-app>
 </template>
 

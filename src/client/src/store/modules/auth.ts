@@ -9,6 +9,14 @@ import { app } from '../../main';
 
 import { ActionContext } from '../../interfaces/ActionContext.interface';
 import { RegistrationData } from '../../interfaces/RegistrationData.interface';
+import { ACTION__SNACKBAR__SHOW } from './snackbar';
+
+export const ACTION__AUTH__GET_UID = 'ACTION__AUTH__GET_UID';
+export const ACTION__AUTH__LOGIN = 'ACTION__AUTH__LOGIN';
+export const ACTION__AUTH__LOGOUT = 'ACTION__AUTH__LOGOUT';
+export const ACTION__AUTH__REGISTER = 'ACTION__AUTH__REGISTER';
+export const MUTATION__AUTH__SET_UID = 'MUTATION__AUTH__SET_UID';
+export const GETTER__AUTH__UID = 'GETTER__AUTH__UID';
 
 export const auth = {
   state: {
@@ -16,63 +24,44 @@ export const auth = {
   },
 
   actions: {
-    async loginAction(
-      { dispatch, commit }: ActionContext,
-      { email, password }: RegistrationData,
-    ) {
-      try {
-        await firebase.auth().signInWithEmailAndPassword(email, password);
-
-        await dispatch('getUidAction');
-      } catch (error) {
-        commit('setErrorNotificationMutation', error);
-        throw error;
-      }
-    },
-
-    async logoutAction() {
-      await firebase.auth().signOut();
-      app?.$router.go(0);
-      // костыль для сброса стора
-    },
-
-    async registerAction(
+    async [ACTION__AUTH__REGISTER](
       { dispatch, commit, getters }: ActionContext,
-      { email, password, name }: RegistrationData,
+      { email, password, userRole }: RegistrationData,
     ) {
       try {
+        console.log('ACTION__AUTH__REGISTER :>> ');
         await firebase.auth().createUserWithEmailAndPassword(email, password);
-        await dispatch('getUidAction');
-        const uid = getters.uidGetter;
+        await dispatch(GETTER__AUTH__UID);
+        const uid = getters[GETTER__AUTH__UID];
 
         await firebase
           .database()
           .ref(`/users/${uid}/info`)
-          .set({
-            bill: 10000,
-            name,
-          });
+          .set({ userRole });
       } catch (error) {
-        commit('setErrorNotificationMutation', error);
+        dispatch(ACTION__SNACKBAR__SHOW, {
+          isShow: true,
+          message: error.message,
+        });
         throw error;
       }
     },
 
-    async getUidAction({ commit }: any) {
+    async [GETTER__AUTH__UID]({ commit }: any) {
       const user: any = firebase.auth().currentUser || null;
       const userUid: any = user.uid || null;
-      await commit('setUidMutation', userUid);
+      await commit(MUTATION__AUTH__SET_UID, userUid);
       return userUid;
     },
   },
 
   mutations: {
-    setUidMutation(state: any, uid: any) {
+    [MUTATION__AUTH__SET_UID](state: any, uid: any) {
       state.uid = uid;
     },
   },
 
   getters: {
-    uidGetter: (state: any) => state.uid,
+    [GETTER__AUTH__UID]: (state: any) => state.uid,
   },
 };

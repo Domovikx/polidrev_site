@@ -2,27 +2,38 @@
 import { Vue, Component } from 'vue-property-decorator';
 import { emailRules, passwordRules } from '../../../utils/validationRules';
 
-@Component
+import { mapGetters, mapActions, mapMutations } from 'vuex';
+import { ACTION__AUTH__REGISTER } from '@/store/modules/auth';
+
+@Component({
+  methods: {
+    ...mapActions([ACTION__AUTH__REGISTER]),
+    ...mapMutations([]),
+  },
+  computed: mapGetters([]),
+})
 export default class RegisterPage extends Vue {
   public name: 'RegisterPage';
 
   public email: boolean;
-  public userRale: string;
+  public userRole: string;
   public password: string;
   public passwordShow: boolean;
   public valid: boolean;
   public lazy: boolean;
 
+  private ACTION__AUTH__REGISTER;
+
   private data() {
     return {
       email: '',
-      userRale: '',
+      userRole: '',
       password: '',
       passwordShow: false,
       valid: true,
       lazy: false,
 
-      // import validationRules
+      // imports
       emailRules,
       passwordRules,
     };
@@ -32,8 +43,22 @@ export default class RegisterPage extends Vue {
     this.passwordShow = !this.passwordShow;
   }
 
-  private goToPath(path): void {
+  private goToPath(path: string): void {
     this.$router.push(path);
+  }
+
+  async onRegister() {
+    try {
+      const registerFormData = {
+        email: this.email,
+        password: this.password,
+        name: this.userRole,
+      };
+      await this[ACTION__AUTH__REGISTER](registerFormData);
+      this.goToPath('/Admin');
+    } catch (error) {
+      throw error;
+    }
   }
 }
 </script>
@@ -45,7 +70,13 @@ export default class RegisterPage extends Vue {
         <v-card class="elevation-12">
           <v-toolbar flat class="primary white--text">
             <v-toolbar-title class="toolbar-title">Регистрация</v-toolbar-title>
-            <v-btn text class="toolbar-btn primary white--text" to="/">X</v-btn>
+            <v-btn
+              text
+              class="toolbar-btn primary white--text"
+              @click="goToPath('/')"
+            >
+              X
+            </v-btn>
           </v-toolbar>
 
           <v-card-text>
@@ -78,9 +109,14 @@ export default class RegisterPage extends Vue {
             </v-form>
           </v-card-text>
 
-          <v-card-actions>
+          <v-card-actions class="btn-wrapper">
             <v-spacer></v-spacer>
-            <v-btn block class="primary white--text" :disabled="!valid">
+            <v-btn
+              block
+              class="primary white--text"
+              :disabled="!valid"
+              @click="onRegister"
+            >
               Регистрация
             </v-btn>
           </v-card-actions>
@@ -115,5 +151,8 @@ export default class RegisterPage extends Vue {
 }
 .toolbar-btn {
   margin: 0 10px 0 auto;
+}
+.btn-wrapper {
+  padding: 0 16px 16px;
 }
 </style>

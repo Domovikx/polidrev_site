@@ -1,7 +1,7 @@
 interface RegistrationData {
   email: string;
   password: string;
-  name?: string;
+  userRole?: string;
 }
 
 export { RegistrationData };
