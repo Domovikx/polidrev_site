@@ -18,7 +18,7 @@ export const GETTER__AUTH__UID = 'GETTER__AUTH__UID';
 export const auth = {
   state: {
     uid: null,
-  },
+  } as State,
 
   actions: {
     async [ACTION__AUTH__REGISTER](

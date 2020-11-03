@@ -34,14 +34,14 @@ export default class Snackbar extends Vue {
   private get snackbarShow(): boolean {
     return this[GETTER__SNACKBAR__SHOW].isShow;
   }
-  private get snackbarMessage(): string {
-    return this[GETTER__SNACKBAR__SHOW].message;
-  }
   private set snackbarShow(isShow) {
     this[ACTION__SNACKBAR__SHOW]({
       isShow: false,
       message: '',
     } as ActionShowObject);
+  }
+  private get snackbarMessage(): string {
+    return this[GETTER__SNACKBAR__SHOW].message;
   }
 }
 </script>

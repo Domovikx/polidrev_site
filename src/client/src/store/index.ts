@@ -5,9 +5,10 @@ import { navigationDrawer } from './modules/navigationDrawer';
 import { windowStore } from './modules/windowStore';
 import { auth } from './modules/auth';
 import { snackbar } from './modules/snackbar';
+import { furnitureStore } from './modules/furnitureStore';
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-  modules: { navigationDrawer, windowStore, auth, snackbar },
+  modules: { navigationDrawer, windowStore, auth, snackbar, furnitureStore },
 });

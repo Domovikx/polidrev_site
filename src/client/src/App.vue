@@ -12,6 +12,7 @@ import {
   ACTION__WINDOW_STORE__CHECK_BREAKPOINT,
   ACTION__WINDOW_STORE__CHECK_IS_MOBILE,
 } from './store/modules/windowStore';
+import { ACTION__FURNITURE__INIT } from './store/modules/furnitureStore';
 
 @Component({
   components: { DefaultLayout, EmptyLayout, BarComponent, Snackbar },
@@ -19,6 +20,7 @@ import {
     ...mapActions([
       ACTION__WINDOW_STORE__CHECK_IS_MOBILE,
       ACTION__WINDOW_STORE__CHECK_BREAKPOINT,
+      ACTION__FURNITURE__INIT,
     ]),
     ...mapMutations([]),
   },
@@ -28,6 +30,7 @@ export default class App extends Vue {
 
   private ACTION__WINDOW_STORE__CHECK_IS_MOBILE: any;
   private ACTION__WINDOW_STORE__CHECK_BREAKPOINT: any;
+  private ACTION__FURNITURE__INIT: any;
 
   // computed
   private get layout(): string {
@@ -51,6 +54,8 @@ export default class App extends Vue {
 
     const clientWidth: number = document.documentElement.clientWidth;
     this[ACTION__WINDOW_STORE__CHECK_BREAKPOINT](clientWidth);
+
+    this[ACTION__FURNITURE__INIT]();
   }
 
   private resizeHandler() {

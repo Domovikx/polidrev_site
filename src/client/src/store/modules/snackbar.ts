@@ -8,7 +8,7 @@ export const snackbar = {
   state: {
     isShow: false,
     message: '',
-  },
+  } as State,
 
   actions: {
     [ACTION__SNACKBAR__SHOW]: (

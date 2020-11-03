@@ -47,7 +47,7 @@ export default class RegisterPage extends Vue {
     this.$router.push(path);
   }
 
-  async onRegister() {
+  private async onRegister() {
     try {
       const registerData: RegisterData = {
         email: this.email,
