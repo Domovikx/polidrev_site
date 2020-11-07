@@ -55,7 +55,7 @@ export default class RegisterPage extends Vue {
         isAdmin: this.isAdmin,
       };
       await this[ACTION__AUTH__REGISTER](registerData);
-      this.goToPath('/auth/login');
+      this.goToPath('/login');
     } catch (error) {
       throw error;
     }
@@ -124,7 +124,7 @@ export default class RegisterPage extends Vue {
           <v-card-actions>
             <p class="card_register">
               Есть аккаунт?
-              <v-btn text @click="goToPath('/auth/login')">
+              <v-btn text @click="goToPath('/login')">
                 Войти
               </v-btn>
             </p>

@@ -3,11 +3,11 @@ import VueRouter, { RouteConfig } from 'vue-router';
 
 import HomePage from '../views/pages/HomePage.vue';
 import CabinetFurniturePage from '../views/pages/CabinetFurniturePage.vue';
-import SoftFurniturePage from '../views/pages/SoftFurniturePage/SoftFurniturePage.vue';
-import PaymentPage from '../views/pages/PaymentPage/PaymentPage.vue';
+import SoftFurniturePage from '../views/pages/SoftFurniturePages/SoftFurniturePage.vue';
+import PaymentPage from '../views/pages/PaymentPages/PaymentPage.vue';
 import WhereToBuyPage from '../views/pages/WhereToBuyPage/WhereToBuyPage.vue';
 
-import AdminPage from '../views/pages/AdminPage/AdminPage.vue';
+import AdminPage from '../views/pages/AdminPages/AdminPage.vue';
 import LoginPage from '../views/pages/AuthPages/LoginPage.vue';
 import RegisterPage from '../views/pages/AuthPages/RegisterPage.vue';
 
@@ -32,7 +32,7 @@ const routes: RouteConfig[] = [
   },
 
   {
-    path: '/auth/register',
+    path: '/register',
     name: 'RegisterPage',
     component: RegisterPage,
     meta: {
@@ -41,7 +41,7 @@ const routes: RouteConfig[] = [
     },
   },
   {
-    path: '/auth/login',
+    path: '/login',
     name: 'LoginPage',
     component: LoginPage,
     meta: {

@@ -2,14 +2,15 @@
 import { Vue, Component } from 'vue-property-decorator';
 
 @Component
-export default class AdminPage extends Vue {
-  public name: 'AdminPage';
+export default class FurniturePrices extends Vue {
+  public name: 'FurniturePrices';
 }
 </script>
 
 <template>
   <v-container>
-    AdminPage
+    FurniturePrices <br />
+    Цены по группам:<br />
   </v-container>
 </template>
 
